@@ -8,7 +8,7 @@
   --mainWhite: #fff;
   --mainBlack: #222;
   --mainTransition: all 0.3s ease-in-out;
-  --mainSpacing : 0.3rem;
+  --mainSpacing: 0.3rem;
 }
 
 * {
@@ -19,4 +19,16 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: var(--mainGrey);
+  color: var(--mainBlack);
+}
+
+.text-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
+}
+.text-main {
+  color: var(--primaryColor);
 }
