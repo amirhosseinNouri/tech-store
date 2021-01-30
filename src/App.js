@@ -1,4 +1,6 @@
 import './App.css';
+
+// pages
 import Home from './pages/HomePage'
 import About from './pages/AboutPage'
 import Error from './pages/ErrorPage'
