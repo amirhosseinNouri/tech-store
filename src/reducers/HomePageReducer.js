@@ -1,14 +1,14 @@
 const initialState = {
   sidebarOpen: false,
-  cartOpen: faslse,
+  cartOpen: false,
 };
 
 const HomePageReducer = (state = initialState, action) => {
   switch (action.type) {
     case "TOGGLE_CART":
-      return { ...state, cartOpen: !cartOpen };
+      return { ...state, cartOpen: !state.cartOpen };
     case "TOGGLE_SIDEBAR":
-      return { ...state, sidebarOpen: !sidebarOpen };
+      return { ...state, sidebarOpen: !state.sidebarOpen };
     default:
       return state;
   }

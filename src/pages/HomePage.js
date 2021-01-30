@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function HomePage() {
-    return (
-        <div>
-            Home page
-        </div>
-    )
+  const dispatch = useDispatch();
+  const homePage = useSelector((state) => state.homePage);
+  return <div>Home page</div>;
 }
