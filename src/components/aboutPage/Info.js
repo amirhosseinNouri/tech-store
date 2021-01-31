@@ -6,7 +6,7 @@ import styled from "styled-components";
 export default function Info() {
   return (
     <Wrapper>
-      <div>
+      <div className="img-container">
         <img
           src={aboutBcg}
           className="img-fluid img-thumbnail"
@@ -34,27 +34,45 @@ export default function Info() {
 }
 
 const Wrapper = styled.section`
-  padding : 5rem 6rem; 
-  display : grid ;
-  grid-template-columns : 1fr;
-  gap : 0.8rem ;
+  margin: 0 auto;
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 85vw;
 
-  img{
-    width : 90%;
-    display : block;
-    border : 4px solid var(--mainBlack);
+  img {
+    width: 100%;
+    display: block;
+    border: 4px solid var(--mainBlack);
   }
 
   .title-container p {
-    margin-top : 1rem;
+    margin-top: 1rem;
   }
 
   .info-btn {
-    margin : 2rem 0 ;
+    margin: 2rem 0;
   }
 
-  @media (min-width : 768px){
-    grid-template-columns : 1fr 1fr;
+  @media (min-width: 768px) {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+    padding: 5rem 6rem;
+    max-width: 100vw;
+
+    .info-btn {
+      margin: 1.5rem 0;
+    }
   }
-  
+
+  @media (min-width: 1170px) {
+    .img-container {
+      display: grid;
+      place-items: center;
+    }
+    img {
+      width: 80%;
+    }
+  }
 `;
