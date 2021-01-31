@@ -58,7 +58,7 @@ const Wrapper = styled.section`
     grid-template-columns: 1.5fr 1fr;
     gap: 1.5rem;
     padding: 5rem 6rem;
-    max-width: 100vw;
+    max-width: 95vw;
 
     .info-btn {
       margin: 1.5rem 0;
