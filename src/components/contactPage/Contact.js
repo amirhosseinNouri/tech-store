@@ -6,7 +6,11 @@ export default function Contact() {
   return (
     <Wrapper>
       <Title title="Contact Us"></Title>
-      <form className="contact">
+      <form
+        action="https://formspree.io/f/mqkgjkvj"
+        method="POST"
+        className="contact"
+      >
         <div className="input-container">
           <input type="text" name="name" placeholder="John smith" />
         </div>
@@ -14,10 +18,13 @@ export default function Contact() {
           <input type="email" name="email" placeholder="email@email.com" />
         </div>
         <div className="input-container">
-          <input type="email" name="subject" placeholder="importante!!!" />
+          <input type="text" name="subject" placeholder="importante!!!" />
         </div>
         <div className="input-container">
           <textarea name="message" rows="10" placeholder="Hello"></textarea>
+        </div>
+        <div className="input-container">
+          <input type="submit" value="Send" />
         </div>
       </form>
     </Wrapper>
@@ -49,6 +56,16 @@ const Wrapper = styled.section`
       }
     }
 
+    input[type="submit"] {
+      background-color: var(--primaryColor);
+      border: 2px solid var(--primaryColor);
+      color: var(--mainWhite);
+      outline: none;
+      display: inline-block;
+      height: 40px;
+      cursor: pointer;
+    }
+
     textarea {
       padding: 0.5rem;
       width: 100%;
@@ -62,7 +79,7 @@ const Wrapper = styled.section`
   }
 
   @media (min-width: 768px) {
-    max-width: 50vw;
+    max-width: 60vw;
     input,
     textarea {
       max-width: 50vw;
