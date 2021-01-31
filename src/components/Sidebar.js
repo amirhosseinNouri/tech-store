@@ -15,7 +15,7 @@ export default function Sidebar() {
             <Link
               to={item.path}
               className="sidebar-link"
-              onClick={() => dispatch(toggleCart)}
+              onClick={() => dispatch(toggleSidebar())}
             >
               {item.text}
             </Link>
