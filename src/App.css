@@ -8,7 +8,7 @@
   --mainWhite: #fff;
   --mainBlack: #222;
   --mainTransition: all 0.3s ease-in-out;
-  --mainSpacing: 0.3rem;
+  --mainSpacing: 0.2rem;
 }
 
 * {
@@ -17,6 +17,9 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
 body {
   font-family: "Open Sans", sans-serif;
   background-color: var(--mainGrey);
@@ -31,4 +34,22 @@ body {
 }
 .text-main {
   color: var(--primaryColor);
+}
+.btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--primaryColor);
+  color: var(--mainWhite);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  outline: 2px solid var(--primaryColor);
+  outline-offset: 4px;
+  border: none;
+  transition: var(--mainTransition);
+  margin : 2rem ;
+}
+.btn:hover {
+  background-color: var(--darkGrey);
+  color: var(--primaryColor);
+  outline-color: var(--darkGrey);
 }

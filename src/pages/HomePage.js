@@ -5,7 +5,7 @@ export default function HomePage() {
 
   return <>
   <Hero title="awesome gadgets" max="true">
-    <Link to="/products">our products</Link>
+    <Link className="btn" to="/products">our products</Link>
   </Hero>
   </>;
 }
