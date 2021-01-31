@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 
   .title-underline {
     height: 0.25rem;
-    width: 7rem;
+    width: 9rem;
     background-color: var(--primaryColor);
     margin: ${(props) => (props.center ? "0 auto" : "0")};
   }

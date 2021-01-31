@@ -37,7 +37,7 @@ const Wrapper = styled.section`
   margin: 0 auto;
   padding: 4rem;
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
   max-width: 85vw;
 
   img {
@@ -56,7 +56,6 @@ const Wrapper = styled.section`
 
   @media (min-width: 768px) {
     grid-template-columns: 1.5fr 1fr;
-    gap: 1.5rem;
     padding: 5rem 6rem;
     max-width: 95vw;
 
