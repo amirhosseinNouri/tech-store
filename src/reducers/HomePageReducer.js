@@ -1,7 +1,9 @@
+import linkData from '../data/linkData'
 const initialState = {
   sidebarOpen: false,
   cartOpen: false,
   cartItems: 0,
+  linkData
 };
 
 const HomePageReducer = (state = initialState, action) => {
