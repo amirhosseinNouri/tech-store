@@ -8,7 +8,6 @@ import { toggleSidebar, toggleCart } from "../actions/HomePageActions";
 export default function Navbar() {
   const dispatch = useDispatch();
   const { cartItems } = useSelector((state) => state.homePage);
-  console.log(cartItems);
   return (
     <Wrapper>
       <div className="nav-center">
