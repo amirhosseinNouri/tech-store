@@ -9,5 +9,7 @@ export default function HomePage() {
   <Hero title="awesome gadgets" max="true">
     <Link style={{marginTop : "2rem"}} className="btn" to="/products">our products</Link>
   </Hero>
+  <Services></Services>
+  <Featured></Featured>
   </>;
 }
