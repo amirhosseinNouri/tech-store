@@ -46,7 +46,7 @@ body {
   outline-offset: 4px;
   border: none;
   transition: var(--mainTransition);
-  margin : 2rem ;
+
 }
 .btn:hover {
   background-color: var(--darkGrey);
