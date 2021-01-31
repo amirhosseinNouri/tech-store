@@ -1,11 +1,13 @@
 import linkData from '../data/linkData'
 import socialData from '../data/socialData'
+import serviceData from '../data/serviceData'
 const initialState = {
   sidebarOpen: false,
   cartOpen: false,
   cartItems: 0,
   linkData,
-  socialData
+  socialData,
+  serviceData
 };
 
 const HomePageReducer = (state = initialState, action) => {
