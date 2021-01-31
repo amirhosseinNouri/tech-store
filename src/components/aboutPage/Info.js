@@ -37,7 +37,6 @@ const Wrapper = styled.section`
   margin: 0 auto;
   padding: 4rem;
   display: grid;
-  grid-template-columns: 1fr;
   gap: 1rem;
   max-width: 85vw;
 
