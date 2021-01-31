@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleCart, toggleSidebar } from "../actions/HomePageActions";
+import {  toggleSidebar } from "../actions/HomePageActions";
 
 export default function Sidebar() {
   const dispatch = useDispatch();
