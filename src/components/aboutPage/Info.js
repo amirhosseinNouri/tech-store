@@ -35,7 +35,7 @@ export default function Info() {
 
 const Wrapper = styled.section`
   margin: 0 auto;
-  padding: 4rem;
+  padding: 4rem 1rem;
   display: grid;
   gap: 1.5rem;
   max-width: 85vw;
