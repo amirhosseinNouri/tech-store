@@ -59,6 +59,22 @@ const ProductReducer = (state = initialState, action) => {
         cartItems: state.cartItems.filter((item) => item.id !== action.payload),
       };
 
+    case "CALC_PRICE":
+      let subTotal = 0,
+        total = 0,
+        tax = 0;
+      state.cartItems.forEach((item) => {
+        subTotal += item.total;
+      });
+      tax += 0.2 * subTotal;
+      total += tax + subTotal;
+      return {
+        ...state,
+        cartSubTotal: subTotal,
+        cartTax: tax,
+        cartTotal: total,
+      };
+
     default:
       return state;
   }

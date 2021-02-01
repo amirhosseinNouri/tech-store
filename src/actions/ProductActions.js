@@ -40,15 +40,19 @@ const openCart = () => {
   return { type: "OPEN_CART" };
 };
 const addCartItem = (id) => {
-  return function(dispatch){
-    dispatch({ type: "ADD_CART_ITEM", payload: id })
-    dispatch(openCart())
-    dispatch(increaseCartIndex())
-    setTimeout(() =>{
-      dispatch(closeCart())
-    } , 2000)
+  return function (dispatch) {
+    dispatch({ type: "ADD_CART_ITEM", payload: id });
+    dispatch(openCart());
+    dispatch(increaseCartIndex());
+    dispatch(calculatePrice());
+    setTimeout(() => {
+      dispatch(closeCart());
+    }, 2000);
+  };
+};
 
-  }
+const calculatePrice = () => {
+  return { type: "CALC_PRICE" };
 };
 
 const removeCartItem = (id) => {
