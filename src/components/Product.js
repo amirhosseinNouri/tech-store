@@ -26,7 +26,6 @@ const Wrapper = styled.article`
   border: 1px solid #ccc;
   width: 250px;
   border-radius: 5px;
-  margin-bottom: 2rem;
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.15);
 
   transition: var(--mainTransition);

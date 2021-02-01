@@ -23,10 +23,17 @@ export default function Featured() {
 
 const Wrapper = styled.section`
   padding: 3rem;
-  display : grid ;
-  place-items : center; 
+  /* display : grid ;
+  place-items : center;  */
 
   .items{
+    display : grid ;
     margin-top : 2rem;
+  }
+
+  @media (min-width: 768px){
+    .items{
+      grid-template-columns : repeat(auto-fit , minmax(250px , auto));
+    }
   }
 `;
