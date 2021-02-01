@@ -28,12 +28,14 @@ const Wrapper = styled.section`
 
   .items{
     display : grid ;
-    margin-top : 2rem;
+    /* place-items : center; */
+    margin : 3rem auto 2rem auto;
+    max-width : 900px;
+    row-gap : 2rem ;
+    column-gap : 2.5rem ;
+    grid-template-columns : repeat(auto-fit , minmax(250px , auto));
+    justify-content : space-around;
   }
 
-  @media (min-width: 768px){
-    .items{
-      grid-template-columns : repeat(auto-fit , minmax(250px , auto));
-    }
-  }
+  
 `;

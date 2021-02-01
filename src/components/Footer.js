@@ -31,6 +31,7 @@ const Wrapper = styled.footer`
   display: grid;
   row-gap: 0.8rem;
   background-color: var(--darkGrey);
+
   color: var(--mainWhite);
   .icon {
     font-size: 1.5rem;
@@ -42,6 +43,7 @@ const Wrapper = styled.footer`
     }
   }
   .footer__title {
+    text-align : center;
     margin-bottom: 1rem;
   }
 
@@ -52,9 +54,14 @@ const Wrapper = styled.footer`
 
   @media (min-width: 768px) {
     text-align: left;
-    padding: 1rem 3rem;
+    padding: 1rem 5rem;
     grid-template-columns: 1fr 1fr;
     /* justify-content : center; */
     align-items: center;
+
+    .footer__icons{
+      max-width : 30vw;
+    }
   }
+
 `;

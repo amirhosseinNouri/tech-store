@@ -24,7 +24,7 @@ const Wrapper = styled.section`
   margin: 0 auto;
   background-color: rgba(95, 183, 234, 0.5);
   text-align: center;
-  padding: 4rem 2rem 1rem 2rem;
+  padding: 2rem 2rem 1rem 2rem;
 
   .service__item {
     margin-bottom: 2rem;

@@ -21,21 +21,22 @@ export default function Product({ product }) {
 }
 
 const Wrapper = styled.article`
-  padding: 2.5rem 2rem 1.5rem 2rem;
+  padding: 2.5rem 1rem 1.5rem 1rem;
   background-color: var(--mainWhite);
   border: 1px solid #ccc;
-  width: 250px;
+  width: 280px;
   border-radius: 5px;
   box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.15);
-
   transition: var(--mainTransition);
   color: var(--mainBlack);
 
   .product__img {
     margin-bottom: 2.5rem;
+    
     img {
-      width: 100%;
+      width: 80%;
       display: block;
+      margin : 0 auto ;
     }
   }
   .product__info {
