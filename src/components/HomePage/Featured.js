@@ -32,7 +32,7 @@ const Wrapper = styled.section`
     margin: 3rem auto 2rem auto;
     max-width: 900px;
     row-gap: 2rem;
-    column-gap : 2rem;
+    column-gap : 3rem;
     justify-content : center;
   }
 `;

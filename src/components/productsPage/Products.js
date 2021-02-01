@@ -23,10 +23,11 @@ const Wrapper = styled.section`
 
   .products {
     margin: 3rem auto 1rem auto;
-    justify-content: space-around;
+    justify-content: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-    gap: 2rem;
+    row-gap: 2rem;
+    column-gap : 3rem;
     max-width: 920px;
   }
 `;
