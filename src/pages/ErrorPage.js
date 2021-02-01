@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import Hero from "../components/Hero";
 import defaultBcg from "../images/defaultBcg.jpeg";
 import {Link} from 'react-router-dom'

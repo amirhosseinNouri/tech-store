@@ -2,7 +2,7 @@ import "./App.css";
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import {initialSetup} from './actions/ProductActions'
-import {useDispatch , useSelector} from 'react-redux'
+import {useDispatch } from 'react-redux'
 
 
 // components

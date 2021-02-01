@@ -1,11 +1,11 @@
 import React from "react";
-import { toggleCart } from "../actions/HomePageActions";
+import { toggleCart } from "../actions/CartActions";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
 export default function SideCart() {
   const dispatch = useDispatch();
-  const { cartOpen } = useSelector((state) => state.homePage);
+  const { cartOpen } = useSelector((state) => state.cart);
 
   return (
     <Wrapper show={cartOpen} onClick={() => dispatch(toggleCart())}>
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
   background-color: var(--mainGrey);
   border-left: 4px solid var(--primaryColor);
   transition: var(--mainTransition);
-  transform: ${props => props.show ? "translateX(0)" : "translateX(100%)"};
+  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
 
   @media (min-width: 576px) {
     width: 20rem;
