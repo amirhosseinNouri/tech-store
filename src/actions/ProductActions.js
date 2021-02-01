@@ -13,7 +13,6 @@ const initialSetup = () => {
   return { type: "INITIAL_SETUP", payload };
 };
 
-
 const setSignleProduct = (id) => {
   return { type: "SET_SINGLE", payload: id };
 };
@@ -40,7 +39,7 @@ const addCartItem = (id) => {
     dispatch(openCart());
     dispatch(increaseCartIndex());
     dispatch(calculatePrice());
-    dispatch(syncStorage())
+    dispatch(syncStorage());
     setTimeout(() => {
       dispatch(closeCart());
     }, 2000);
@@ -51,21 +50,21 @@ const calculatePrice = () => {
   return { type: "CALC_PRICE" };
 };
 
-const syncStorage = () =>{
-  return {type : "SYNC_STORAGE"}
-}
+const syncStorage = () => {
+  return { type: "SYNC_STORAGE" };
+};
 
-const initializeCart = () =>{
-  return {type :"INIT_CART"}
-}
+const initializeCart = () => {
+  return { type: "INIT_CART" };
+};
 
 const removeCartItem = (id) => {
   return { type: "REMOVE_CART_ITEM", payload: id };
 };
 
-const initializeSingleProduct = () =>{
-  return {type : "INIT_SINGLE"}
-}
+const initializeSingleProduct = () => {
+  return { type: "INIT_SINGLE" };
+};
 
 export {
   initialSetup,
@@ -78,5 +77,5 @@ export {
   addCartItem,
   removeCartItem,
   initializeCart,
-  initializeSingleProduct
+  initializeSingleProduct,
 };
