@@ -12,7 +12,7 @@ export default function Featured() {
     <Wrapper>
       <Title title="featured products"></Title>
       {featuredProducts.map((item) => {
-          return <Product key={item.id}></Product>
+          return <Product product={item} key={item.id}></Product>
       })}
     </Wrapper>
   );

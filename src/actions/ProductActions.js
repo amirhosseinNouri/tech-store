@@ -13,4 +13,12 @@ const initialSetup = () => {
   return { type: "INITIAL_SETUP", payload };
 };
 
-export { initialSetup };
+const addToCart = () =>{
+  return {type : "ADD_TO_CART"}
+}
+
+const setSignleProduct = () =>{
+  return {type : "SET_SINGLE"}
+}
+
+export { initialSetup , addToCart ,  setSignleProduct };
