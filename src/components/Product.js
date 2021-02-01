@@ -17,10 +17,13 @@ export default function Product({ product }) {
         <span className="product__price">{product.price}</span>
       </div>
       <div className="product__icons">
-        <FaSearch
-          className="icon"
-          onClick={() => dispatch(setSignleProduct(product.id))}
-        ></FaSearch>
+        <Link to={`/products/${product.id}`}>
+          <FaSearch
+            className="icon"
+            onClick={() => dispatch(setSignleProduct(product.id))}
+          ></FaSearch>
+        </Link>
+
         <FaCartPlus
           className="icon"
           onClick={() => dispatch(addToCart(product.id))}
@@ -58,10 +61,9 @@ const Wrapper = styled.article`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
+    display: none;
     justify-content: center;
     opacity: 0;
-    z-index: 1;
 
     .icon {
       padding: 0.5rem;
@@ -101,6 +103,7 @@ const Wrapper = styled.article`
 
     .product__icons {
       opacity: 1;
+      display: flex;
     }
   }
 `;

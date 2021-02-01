@@ -1,7 +1,6 @@
 import React from "react";
 import Product from "../Product";
 import { Link } from "react-router-dom";
-import TItle from "../Title";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import Title from "../Title";
