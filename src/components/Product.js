@@ -17,8 +17,14 @@ export default function Product({ product }) {
         <span className="product__price">{product.price}</span>
       </div>
       <div className="product__icons">
-        <FaSearch className="icon"></FaSearch>
-        <FaCartPlus className="icon"></FaCartPlus>
+        <FaSearch
+          className="icon"
+          onClick={() => dispatch(setSignleProduct(product.id))}
+        ></FaSearch>
+        <FaCartPlus
+          className="icon"
+          onClick={() => dispatch(addToCart(product.id))}
+        ></FaCartPlus>
       </div>
     </Wrapper>
   );

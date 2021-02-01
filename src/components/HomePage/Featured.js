@@ -8,7 +8,6 @@ import Title from "../Title";
 
 export default function Featured() {
   const { featuredProducts } = useSelector((state) => state.product);
-  console.log(featuredProducts);
   return (
     <Wrapper>
       <Title title="featured products" center="true"></Title>

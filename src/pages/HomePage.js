@@ -9,7 +9,6 @@ import {initialSetup} from '../actions/ProductActions'
 export default function HomePage() {
   const dispatch = useDispatch()
   const product = useSelector(state => state.product)
-  console.log(product);
 
   useEffect(() => {
     dispatch(initialSetup())
