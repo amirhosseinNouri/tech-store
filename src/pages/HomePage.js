@@ -13,7 +13,7 @@ export default function HomePage() {
 
   useEffect(() => {
     dispatch(initialSetup())
-  } , [])
+  } , [dispatch])
 
   return <>
   <Hero title="awesome gadgets" max="true">

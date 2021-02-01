@@ -2,7 +2,7 @@ const initialState = {
   storeProducts: [],
   filteredProducts: [],
   featuredProducts: [],
-  singleProducts: [],
+  singleProducts: {},
   loading: false,
 };
 const ProductReducer = (state = initialState, action) => {
