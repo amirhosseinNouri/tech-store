@@ -13,29 +13,24 @@ export default function Featured() {
     <Wrapper>
       <Title title="featured products" center="true"></Title>
       <div className="items">
-      {featuredProducts.map((item) => {
-          return <Product product={item} key={item.id}></Product>
-      })}
+        {featuredProducts.map((item) => {
+          return <Product product={item} key={item.id}></Product>;
+        })}
       </div>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.section`
-  padding: 3rem;
-  /* display : grid ;
-  place-items : center;  */
+  padding: 3rem 2rem 1rem 2rem;
 
-  .items{
-    display : grid ;
-    /* place-items : center; */
-    margin : 3rem auto 2rem auto;
-    max-width : 900px;
-    row-gap : 2rem ;
-    column-gap : 2.5rem ;
-    grid-template-columns : repeat(auto-fit , minmax(250px , auto));
-    justify-content : space-around;
+  .items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    margin: 3rem auto 2rem auto;
+    max-width: 900px;
+    row-gap: 2rem;
+    column-gap: 2.5rem;
+    justify-content: space-around;
   }
-
-  
 `;

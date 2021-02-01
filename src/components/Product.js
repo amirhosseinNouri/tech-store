@@ -16,29 +16,57 @@ export default function Product({ product }) {
         <span>{product.title}</span>
         <span className="product__price">{product.price}</span>
       </div>
+      <div className="product__icons">
+        <FaSearch className="icon"></FaSearch>
+        <FaCartPlus className="icon"></FaCartPlus>
+      </div>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.article`
+  position: relative;
   padding: 2.5rem 1rem 1.5rem 1rem;
   background-color: var(--mainWhite);
   border: 1px solid #ccc;
   width: 280px;
   border-radius: 5px;
-  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
   transition: var(--mainTransition);
   color: var(--mainBlack);
 
   .product__img {
     margin-bottom: 2.5rem;
-    
+    transition: var(--mainTransition);
+
     img {
       width: 80%;
       display: block;
-      margin : 0 auto ;
+      margin: 0 auto;
     }
   }
+
+  .product__icons {
+    transition: var(--mainTransition);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    z-index: 1;
+
+    .icon {
+      padding: 0.5rem;
+      background-color: var(--mainBlack);
+      color: var(--primaryColor);
+      font-size: 2.5rem;
+      border-radius: 0.5rem;
+      margin: 1rem;
+    }
+  }
+
   .product__info {
     display: flex;
     justify-content: space-between;
@@ -53,6 +81,16 @@ const Wrapper = styled.article`
   }
 
   &:hover {
-    box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 7px 10px 5px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+    .product__img {
+      transform: scale(1.15);
+      opacity: 0.2;
+    }
+
+    .product__icons {
+      opacity: 1;
+    }
   }
 `;
