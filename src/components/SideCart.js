@@ -1,11 +1,11 @@
 import React from "react";
-import { toggleCart } from "../actions/CartActions";
+import { toggleCart } from "../actions/ProductActions";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
 export default function SideCart() {
   const dispatch = useDispatch();
-  const { cartOpen } = useSelector((state) => state.cart);
+  const { cartOpen } = useSelector((state) => state.product);
 
   return (
     <Wrapper show={cartOpen} onClick={() => dispatch(toggleCart())}>

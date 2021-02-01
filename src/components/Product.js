@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaSearch, FaCartPlus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { addToCart, setSignleProduct } from "../actions/ProductActions";
+import {  setSignleProduct } from "../actions/ProductActions";
+import {addCartItem} from '../actions/ProductActions'
 
 export default function Product({ product }) {
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ export default function Product({ product }) {
 
         <FaCartPlus
           className="icon"
-          onClick={() => dispatch(addToCart(product.id))}
+          onClick={() => dispatch(addCartItem(product.id))}
         ></FaCartPlus>
       </div>
     </Wrapper>

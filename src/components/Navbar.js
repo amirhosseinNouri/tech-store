@@ -4,11 +4,11 @@ import { FaBars, FaCartPlus } from "react-icons/fa";
 import styled from "styled-components";
 import logo from "../images/logo.svg";
 import { toggleSidebar } from "../actions/HomePageActions";
-import { toggleCart } from "../actions/CartActions";
+import { toggleCart } from "../actions/ProductActions";
 
 export default function Navbar() {
   const dispatch = useDispatch();
-  const { cartIndex } = useSelector((state) => state.cart);
+  const { cartIndex } = useSelector((state) => state.product);
   return (
     <Wrapper>
       <div className="nav-center">
