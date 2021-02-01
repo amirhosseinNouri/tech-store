@@ -16,12 +16,16 @@ export default function Featured() {
           return <Product product={item} key={item.id}></Product>;
         })}
       </div>
+      <Link to="/products" className="btn" style={{margin : "1.5rem"}}>
+        out products
+      </Link>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.section`
   padding: 3rem 2rem 1rem 2rem;
+  text-align : center ;
 
   .items {
     display: grid;
