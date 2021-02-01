@@ -13,7 +13,7 @@ export default function Product({ product }) {
         <img src={product.image} alt="" />
       </div>
       <div className="product__info">
-        <span>{product.title}</span>
+        <span className="product__title">{product.title}</span>
         <span className="product__price">{product.price}</span>
       </div>
       <div className="product__icons">
@@ -32,7 +32,7 @@ export default function Product({ product }) {
 
 const Wrapper = styled.article`
   position: relative;
-  padding: 2.5rem 1rem 1.5rem 1rem;
+  padding: 2.5rem 1rem 1rem 1rem;
   background-color: var(--mainWhite);
   border: 1px solid #ccc;
   width: 280px;
@@ -80,6 +80,10 @@ const Wrapper = styled.article`
 
     span {
       font-size: 0.9rem;
+    }
+    .product__title {
+      font-weight: bold;
+      letter-spacing: 1.5px;
     }
     .product__price {
       color: var(--primaryColor-2);
