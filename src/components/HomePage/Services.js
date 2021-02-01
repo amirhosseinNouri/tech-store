@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 export default function Services() {
   const { serviceData } = useSelector((state) => state.homePage);
-  console.log(serviceData);
   return (
     <Wrapper>
       {serviceData.map((item) => {

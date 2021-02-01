@@ -7,7 +7,11 @@ const initialState = {
   cartItems: 0,
   linkData,
   socialData,
-  serviceData
+  serviceData,
+  cartSubTotal : 0,
+  cartTax : 0 ,
+  cartTotal : 0 ,
+
 };
 
 const HomePageReducer = (state = initialState, action) => {

@@ -1,4 +1,4 @@
-export const items = [
+ const items = [
   {
     sys: { id: 0 },
     fields: {
@@ -179,3 +179,5 @@ export const items = [
     }
   }
 ];
+
+export default items
