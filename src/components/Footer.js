@@ -26,7 +26,7 @@ export default function Footer() {
 }
 const Wrapper = styled.footer`
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding:  2rem;
   text-align: center;
   display: grid;
   row-gap: 0.8rem;
@@ -53,14 +53,16 @@ const Wrapper = styled.footer`
   }
 
   @media (min-width: 768px) {
-    text-align: left;
-    padding: 1rem 5rem;
+    padding: 1.5rem 5rem;
     grid-template-columns: 1fr 1fr;
-    /* justify-content : center; */
     align-items: center;
 
     .footer__icons{
       max-width : 30vw;
+    }
+
+    .footer__title{
+      margin-bottom: 0;
     }
   }
 
