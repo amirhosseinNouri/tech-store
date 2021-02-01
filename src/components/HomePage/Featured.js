@@ -11,14 +11,22 @@ export default function Featured() {
   console.log(featuredProducts);
   return (
     <Wrapper>
-      <Title title="featured products"></Title>
+      <Title title="featured products" center="true"></Title>
+      <div className="items">
       {featuredProducts.map((item) => {
           return <Product product={item} key={item.id}></Product>
       })}
+      </div>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.section`
   padding: 3rem;
+  display : grid ;
+  place-items : center; 
+
+  .items{
+    margin-top : 2rem;
+  }
 `;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export default function Title({ title, center }) {
   return (
-    <Wrapper className="row" center={center}>
-      <div className="column">
+    <Wrapper center={center}>
+      <div>
         <h2 className="text-title">{title}</h2>
         <div className="title-underline"></div>
       </div>
@@ -14,6 +14,10 @@ export default function Title({ title, center }) {
 
 const Wrapper = styled.div`
   text-align: ${(props) => (props.center ? "center" : "left")};
+
+  h2{
+    margin-bottom : 0.7rem;
+  }
 
   .title-underline {
     height: 0.25rem;
