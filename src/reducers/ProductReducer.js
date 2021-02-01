@@ -32,7 +32,6 @@ const ProductReducer = (state = initialState, action) => {
     case "OPEN_CART":
       return { ...state, cartOpen: true };
     case "ADD_CART_ITEM":
-      console.log(action.payload);
       let tempCart = [...state.cartItems];
       let tempProducts = [...state.storeProducts];
       let tempItem = tempCart.find((item) => item.id === action.payload);

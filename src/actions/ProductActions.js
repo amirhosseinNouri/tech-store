@@ -40,7 +40,15 @@ const openCart = () => {
   return { type: "OPEN_CART" };
 };
 const addCartItem = (id) => {
-  return { type: "ADD_CART_ITEM", payload: id };
+  return function(dispatch){
+    dispatch({ type: "ADD_CART_ITEM", payload: id })
+    dispatch(openCart())
+    dispatch(increaseCartIndex())
+    setTimeout(() =>{
+      dispatch(closeCart())
+    } , 2000)
+
+  }
 };
 
 const removeCartItem = (id) => {
