@@ -1,5 +1,8 @@
 import "./App.css";
+import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {initialSetup} from './actions/ProductActions'
+import {useDispatch , useSelector} from 'react-redux'
 
 
 // components
@@ -18,6 +21,12 @@ import Contact from "./pages/ContactPage";
 import Cart from "./pages/CartPage";
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  React.useEffect(() => {
+    dispatch(initialSetup())
+  } , [dispatch])
   return <Router>
     <Navbar></Navbar>
     <Sidebar></Sidebar>

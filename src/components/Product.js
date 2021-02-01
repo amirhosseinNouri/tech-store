@@ -14,7 +14,7 @@ export default function Product({ product }) {
       </div>
       <div className="product__info">
         <span className="product__title">{product.title}</span>
-        <span className="product__price">{product.price}</span>
+        <span className="product__price">${product.price}</span>
       </div>
       <div className="product__icons">
         <Link to={`/products/${product.id}`}>

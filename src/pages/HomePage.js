@@ -3,16 +3,9 @@ import Hero from '../components/Hero'
 import {Link} from 'react-router-dom'
 import Services from '../components/HomePage/Services'
 import Featured from '../components/HomePage/Featured'
-import {useDispatch , useSelector} from 'react-redux'
-import {initialSetup} from '../actions/ProductActions'
+
 
 export default function HomePage() {
-  const dispatch = useDispatch()
-  const product = useSelector(state => state.product)
-
-  useEffect(() => {
-    dispatch(initialSetup())
-  } , [dispatch])
 
   return <>
   <Hero title="awesome gadgets" max="true">
