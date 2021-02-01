@@ -19,7 +19,6 @@ const addToCart = (id) => {
 };
 
 const setSignleProduct = (id) => {
-  console.log(`${id} set as single product`);
   return { type: "SET_SINGLE", payload: id };
 };
 
@@ -68,6 +67,10 @@ const removeCartItem = (id) => {
   return { type: "REMOVE_CART_ITEM", payload: id };
 };
 
+const initializeSingleProduct = () =>{
+  return {type : "INIT_SINGLE"}
+}
+
 export {
   initialSetup,
   addToCart,
@@ -79,5 +82,6 @@ export {
   openCart,
   addCartItem,
   removeCartItem,
-  initializeCart
+  initializeCart,
+  initializeSingleProduct
 };

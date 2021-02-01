@@ -2,8 +2,8 @@ const initialState = {
   storeProducts: [],
   filteredProducts: [],
   featuredProducts: [],
-  singleProducts: {},
-  loading: false,
+  singleProduct: {},
+  loading: true,
   cartSubTotal: 0,
   cartTax: 0,
   cartTotal: 0,
@@ -87,7 +87,7 @@ const ProductReducer = (state = initialState, action) => {
       return state;
 
     case "INIT_CART":
-      if (localStorage.getItem('cart')){
+      if (localStorage.getItem("cart")) {
         const {
           cartItem,
           cartIndex,
@@ -95,7 +95,7 @@ const ProductReducer = (state = initialState, action) => {
           cartTax,
           cartSubTotal,
         } = JSON.parse(localStorage.getItem("cart"));
-  
+
         return {
           ...state,
           cartItem,
@@ -105,8 +105,20 @@ const ProductReducer = (state = initialState, action) => {
           cartTotal,
         };
       }
-      return state
+      return state;
 
+    case "SET_SINGLE":
+      let product = state.storeProducts.find(
+        (item) => item.id === action.payload
+      );
+      localStorage.setItem("singleProduct", JSON.stringify(product));
+      return { ...state, singleProduct: { ...product }, loading: false };
+
+    case "INIT_SINGLE":
+      return {
+        ...state,
+        singleProduct: JSON.parse(localStorage.getItem("singleProduct")),
+      };
     default:
       return state;
   }
