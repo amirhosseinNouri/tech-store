@@ -2,14 +2,22 @@ import React from "react";
 import { toggleCart } from "../actions/ProductActions";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 export default function SideCart() {
   const dispatch = useDispatch();
   const { cartOpen } = useSelector((state) => state.product);
+  const {cartItems} = useSelector(state => state.product)
 
   return (
     <Wrapper show={cartOpen} onClick={() => dispatch(toggleCart())}>
-      <p>cart items</p>
+      <ul>
+      {cartItems.map((item) =>{
+        return <li key={item.id}>
+          <img src={item.image} alt=""/>
+        </li>
+      })}
+      </ul>
     </Wrapper>
   );
 }

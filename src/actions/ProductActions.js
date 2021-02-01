@@ -14,8 +14,11 @@ const initialSetup = () => {
 };
 
 const addToCart = (id) => {
-  console.log(`${id} added to cart`);
-  return { type: "ADD_TO_CART", payload: id };
+  
+  return dispatch =>{
+    dispatch({ type: "ADD_TO_CART", payload: id })
+    dispatch(syncStorage())
+  }
 };
 
 const setSignleProduct = (id) => {

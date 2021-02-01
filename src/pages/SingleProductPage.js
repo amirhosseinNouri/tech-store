@@ -86,11 +86,11 @@ const Wrapper = styled.section`
     justify-content: space-between;
     align-items: flex-start;
     flex-wrap: wrap;
-    max-width: 420px;
+    max-width: 430px;
     margin-top: 2rem;
 
     button {
-      font-size: 0.9rem;
+      font-size: 1rem;
       margin-bottom: 2rem;
     }
     a {
