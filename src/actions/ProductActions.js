@@ -45,6 +45,7 @@ const addCartItem = (id) => {
     dispatch(openCart());
     dispatch(increaseCartIndex());
     dispatch(calculatePrice());
+    dispatch(syncStorage())
     setTimeout(() => {
       dispatch(closeCart());
     }, 2000);
@@ -54,6 +55,14 @@ const addCartItem = (id) => {
 const calculatePrice = () => {
   return { type: "CALC_PRICE" };
 };
+
+const syncStorage = () =>{
+  return {type : "SYNC_STORAGE"}
+}
+
+const initializeCart = () =>{
+  return {type :"INIT_CART"}
+}
 
 const removeCartItem = (id) => {
   return { type: "REMOVE_CART_ITEM", payload: id };
@@ -70,4 +79,5 @@ export {
   openCart,
   addCartItem,
   removeCartItem,
+  initializeCart
 };

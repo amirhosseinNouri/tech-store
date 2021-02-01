@@ -1,7 +1,7 @@
 import "./App.css";
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import {initialSetup} from './actions/ProductActions'
+import {initialSetup ,initializeCart} from './actions/ProductActions'
 import {useDispatch } from 'react-redux'
 
 
@@ -26,6 +26,7 @@ function App() {
 
   React.useEffect(() => {
     dispatch(initialSetup())
+    dispatch(initializeCart())
   } , [dispatch])
   return <Router>
     <Navbar></Navbar>

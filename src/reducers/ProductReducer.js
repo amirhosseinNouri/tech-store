@@ -75,6 +75,38 @@ const ProductReducer = (state = initialState, action) => {
         cartTotal: total,
       };
 
+    case "SYNC_STORAGE":
+      const cart = {
+        cartItem: state.cartItem,
+        cartIndex: state.cartIndex,
+        cartTotal: state.cartTotal,
+        cartTax: state.cartTax,
+        cartSubTotal: state.cartSubTotal,
+      };
+      localStorage.setItem("cart", JSON.stringify(cart));
+      return state;
+
+    case "INIT_CART":
+      if (localStorage.getItem('cart')){
+        const {
+          cartItem,
+          cartIndex,
+          cartTotal,
+          cartTax,
+          cartSubTotal,
+        } = JSON.parse(localStorage.getItem("cart"));
+  
+        return {
+          ...state,
+          cartItem,
+          cartIndex,
+          cartSubTotal,
+          cartTax,
+          cartTotal,
+        };
+      }
+      return state
+
     default:
       return state;
   }
