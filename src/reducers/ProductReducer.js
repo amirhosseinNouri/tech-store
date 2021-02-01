@@ -3,7 +3,7 @@ const initialState = {
   filteredProducts: [],
   featuredProducts: [],
   singleProduct: {},
-  loading: true,
+  loading: false,
   cartSubTotal: 0,
   cartTax: 0,
   cartTotal: 0,
