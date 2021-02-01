@@ -13,13 +13,6 @@ const initialSetup = () => {
   return { type: "INITIAL_SETUP", payload };
 };
 
-const addToCart = (id) => {
-  
-  return dispatch =>{
-    dispatch({ type: "ADD_TO_CART", payload: id })
-    dispatch(syncStorage())
-  }
-};
 
 const setSignleProduct = (id) => {
   return { type: "SET_SINGLE", payload: id };
@@ -76,7 +69,6 @@ const initializeSingleProduct = () =>{
 
 export {
   initialSetup,
-  addToCart,
   setSignleProduct,
   increaseCartIndex,
   decreaseCartIndex,

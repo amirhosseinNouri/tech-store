@@ -7,7 +7,7 @@ const initialState = {
   cartSubTotal: 0,
   cartTax: 0,
   cartTotal: 0,
-  cartOpen: false,
+  cartOpen: true,
   cartIndex: 0,
   cartItems: [],
 };
@@ -77,7 +77,7 @@ const ProductReducer = (state = initialState, action) => {
 
     case "SYNC_STORAGE":
       const cart = {
-        cartItem: state.cartItem,
+        cartItems: state.cartItems,
         cartIndex: state.cartIndex,
         cartTotal: state.cartTotal,
         cartTax: state.cartTax,
@@ -87,9 +87,10 @@ const ProductReducer = (state = initialState, action) => {
       return state;
 
     case "INIT_CART":
+      console.log(state.cartItems);
       if (localStorage.getItem("cart")) {
         const {
-          cartItem,
+          cartItems,
           cartIndex,
           cartTotal,
           cartTax,
@@ -98,7 +99,7 @@ const ProductReducer = (state = initialState, action) => {
 
         return {
           ...state,
-          cartItem,
+          cartItems,
           cartIndex,
           cartSubTotal,
           cartTax,

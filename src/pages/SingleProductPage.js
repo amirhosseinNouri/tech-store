@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Hero from "../components/Hero";
 import singleProductImg from "../images/singleProductBcg.jpeg";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCart } from "../actions/ProductActions";
+import { addCartItem } from "../actions/ProductActions";
 
 export default function SingleProductPage() {
   const dispatch = useDispatch();
@@ -28,7 +28,7 @@ export default function SingleProductPage() {
             <button
               type="button"
               className="btn"
-              onClick={() => dispatch(addToCart(id))}
+              onClick={() => dispatch(addCartItem(id))}
             >
               Add to cart
             </button>
