@@ -32,9 +32,28 @@ const ProductReducer = (state = initialState, action) => {
     case "OPEN_CART":
       return { ...state, cartOpen: true };
     case "ADD_CART_ITEM":
+      console.log(action.payload);
       let tempCart = [...state.cartItems];
-      let tempProducts = [...action.payload.storeProducts];
-      return { ...state, cartItems: [...state.cartItems, action.payload] };
+      let tempProducts = [...state.storeProducts];
+      let tempItem = tempCart.find((item) => item.id === action.payload);
+      if (!tempItem) {
+        tempItem = tempProducts.find((item) => item.id === action.payload);
+        let total = tempItem.price;
+        let cartItem = { ...tempItem, count: 1, total };
+        return { ...state, cartItems: [...state.cartItems, cartItem] };
+      } else {
+        tempItem.count++;
+        tempItem.total = tempItem.price * tempItem.count;
+        tempItem.total = parseFloat(tempItem.total.toFixed(2));
+        return {
+          ...state,
+          cartItems: [
+            ...state.cartItems.filter((item) => item.id !== action.payload),
+            tempItem,
+          ],
+        };
+      }
+
     case "REMOVE_CART_ITEM":
       return {
         ...state,

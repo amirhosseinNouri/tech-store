@@ -95,7 +95,7 @@ const Wrapper = styled.article`
 
   &:hover {
     box-shadow: 7px 10px 5px 0px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
+
 
     .product__img {
       transform: scale(1.15);
@@ -105,6 +105,7 @@ const Wrapper = styled.article`
     .product__icons {
       opacity: 1;
       display: flex;
+      cursor: pointer;
     }
   }
 `;
