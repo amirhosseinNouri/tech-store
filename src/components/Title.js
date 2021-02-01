@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   text-align: ${(props) => (props.center ? "center" : "left")};
 
   h2 {
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.9rem;
   }
 
   .title-underline {
