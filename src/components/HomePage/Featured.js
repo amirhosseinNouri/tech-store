@@ -33,7 +33,6 @@ const Wrapper = styled.section`
     max-width: 900px;
     row-gap: 2rem;
     column-gap : 2rem;
-    border : 1px solid red ;
     justify-content : center;
   }
 `;
