@@ -1,13 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch } from "react-redux";
 import styled from "styled-components";
+import {clearCart} from '../../actions/ProductActions'
 export default function CartTotal() {
+  const dispatch = useDispatch()
   const { cartTotal, cartTax, cartSubTotal } = useSelector(
     (state) => state.product
   );
   return (
     <Wrapper>
-      <button className="clear">Clear Cart</button>
+      <button className="clear" onClick={() => dispatch(clearCart())}>Clear Cart</button>
       <div className="price">Subtotal : ${cartSubTotal}</div>
       <div className="price">Tax : ${cartTax}</div>
       <div className="price">Total : ${cartTotal}</div>

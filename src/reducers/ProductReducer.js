@@ -123,7 +123,7 @@ const ProductReducer = (state = initialState, action) => {
         ...state,
         cartItems: state.cartItems.filter((item) => item.id !== action.payload),
       };
-    case "CLEAR_CART":
+    case "CLEAR_CART": console.log('clear cart');
 
     default:
       return state;
