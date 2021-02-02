@@ -65,14 +65,23 @@ const initializeSingleProduct = () => {
 // Cart page actions
 
 const increaseQuantity = (id) => {
-  return { type: "INC_QUANTITY", payload: id };
+  return (dispatch) => {
+    dispatch({ type: "INC_QUANTITY", payload: id });
+    dispatch(syncStorage());
+  };
 };
 const decreaseQuantity = (id) => {
-  return { type: "DEC_QUANTITY", payload: id };
+  return (dispatch) => {
+    dispatch({ type: "DEC_QUANTITY", payload: id });
+    dispatch(syncStorage());
+  };
 };
 
 const removeCartItem = (id) => {
-  return { type: "REMOVE_CART_ITEM", payload: id };
+  return (dispatch) => {
+    dispatch({ type: "REMOVE_CART_ITEM", payload: id });
+    dispatch(syncStorage());
+  };
 };
 
 const clearCart = () => {

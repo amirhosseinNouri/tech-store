@@ -117,9 +117,26 @@ const ProductReducer = (state = initialState, action) => {
 
     // Cart Page
     case "INC_QUANTITY":
-      console.log(`inc quantity ${action.paylaod}`);
+      const tempCartItemInc = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+      tempCartItemInc.count++;
+      return { ...state };
     case "DEC_QUANTITY":
-      console.log(`dec quantity ${action.paylaod}`);
+      const tempCartItemDec = state.cartItems.find(
+        (item) => item.id === action.payload
+      );
+      tempCartItemDec.count--;
+      if (tempCartItemDec.count === 0) {
+        return {
+          ...state,
+          cartItems: state.cartItems.filter(
+            (item) => item.id !== action.payload
+          ),
+        };
+      }
+      return { ...state };
+
     case "REMOVE_CART_ITEM":
       return {
         ...state,
