@@ -6,8 +6,8 @@ import styled from "styled-components";
 export default function CartList() {
   const { cartItems } = useSelector((state) => state.product);
 
-  if (cartItems.lenght === 0) {
-    return <h1>Your cart is currently empty</h1>;
+  if (cartItems.length === 0) {
+    return <h1 className="empty">Your cart is currently empty</h1>;
   }
   return (
     <Wrapper>
@@ -20,4 +20,5 @@ export default function CartList() {
 
 const Wrapper = styled.section`
   margin-top: 2rem;
+  
 `;

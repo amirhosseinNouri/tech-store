@@ -61,3 +61,8 @@ body {
   font-size: 2rem;
   letter-spacing: var(--mainSpacing);
 }
+.empty{
+    text-align : center;
+    margin: 5rem 0;
+    letter-spacing:  1px;
+}
