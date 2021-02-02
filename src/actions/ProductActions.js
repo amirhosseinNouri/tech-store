@@ -58,14 +58,26 @@ const initializeCart = () => {
   return { type: "INIT_CART" };
 };
 
-const removeCartItem = (id) => {
-  return { type: "REMOVE_CART_ITEM", payload: id };
-};
-
 const initializeSingleProduct = () => {
   return { type: "INIT_SINGLE" };
 };
 
+// Cart page actions
+
+const increaseQuantity = (id) => {
+  return { type: "INC_QUANTITY", payload: id };
+};
+const decreaseQuantity = (id) => {
+  return { type: "DEC_QUANTITY", payload: id };
+};
+
+const removeCartItem = (id) => {
+  return { type: "REMOVE_CART_ITEM", payload: id };
+};
+
+const clearCart = () => {
+  return { type: "CLEAR_CART" };
+};
 export {
   initialSetup,
   setSignleProduct,
@@ -78,4 +90,7 @@ export {
   removeCartItem,
   initializeCart,
   initializeSingleProduct,
+  increaseQuantity,
+  decreaseQuantity,
+  clearCart,
 };

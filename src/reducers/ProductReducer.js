@@ -53,12 +53,6 @@ const ProductReducer = (state = initialState, action) => {
         };
       }
 
-    case "REMOVE_CART_ITEM":
-      return {
-        ...state,
-        cartItems: state.cartItems.filter((item) => item.id !== action.payload),
-      };
-
     case "CALC_PRICE":
       let subTotal = 0,
         total = 0,
@@ -120,6 +114,17 @@ const ProductReducer = (state = initialState, action) => {
         ...state,
         singleProduct: JSON.parse(localStorage.getItem("singleProduct")),
       };
+
+      // Cart Page
+    case "INC_QUANTITY":
+    case "DEC_QUANTITY":
+    case "REMOVE_CART_ITEM":
+      return {
+        ...state,
+        cartItems: state.cartItems.filter((item) => item.id !== action.payload),
+      };
+    case "CLEAR_CART":
+
     default:
       return state;
   }
