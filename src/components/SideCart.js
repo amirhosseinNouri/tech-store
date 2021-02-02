@@ -15,7 +15,10 @@ export default function SideCart() {
         {cartItems.map((item) => {
           return (
             <li key={item.id}>
-              <img src={item.image} alt={item.title} />
+              <img 
+              // src={item.image}
+              src={`../${item.image}`}
+               alt={item.title} />
               <h6 className="title">{item.title}</h6>
               <h6 className="amount">Amount : {item.count}</h6>
             </li>
