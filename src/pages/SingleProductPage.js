@@ -16,7 +16,7 @@ export default function SingleProductPage() {
       {loading ? <h2>Loading...</h2> : null}
       <Wrapper>
         <div className="img-container">
-          <img src={`../${image}`} alt="product image" />
+          <img src={`../${image}`} alt="product" />
         </div>
         <div className="info-container">
           <h5 className="title">Model : {title}</h5>

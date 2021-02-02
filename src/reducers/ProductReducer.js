@@ -25,6 +25,11 @@ const ProductReducer = (state = initialState, action) => {
       return { ...state, cartIndex: state.cartIndex + 1 };
     case "DEC_CART_INDEX":
       return { ...state, cartIndex: state.cartIndex - 1 };
+
+    case "ADJUST_CART_INDEX":
+      let tempCount = state.cartItems.find((item) => item.id === action.payload)
+        .count;
+      return { ...state, cartIndex: state.cartIndex - tempCount };
     case "TOGGLE_CART":
       return { ...state, cartOpen: !state.cartOpen };
     case "CLOSE_CART":
@@ -81,7 +86,6 @@ const ProductReducer = (state = initialState, action) => {
       return state;
 
     case "INIT_CART":
-      console.log(state.cartItems);
       if (localStorage.getItem("cart")) {
         const {
           cartItems,
@@ -121,12 +125,14 @@ const ProductReducer = (state = initialState, action) => {
         (item) => item.id === action.payload
       );
       tempCartItemInc.count++;
+      tempCartItemInc.total += tempCartItemInc.price;
       return { ...state };
     case "DEC_QUANTITY":
       const tempCartItemDec = state.cartItems.find(
         (item) => item.id === action.payload
       );
       tempCartItemDec.count--;
+      tempCartItemDec.total -= tempCartItemDec.price;
       if (tempCartItemDec.count === 0) {
         return {
           ...state,
@@ -143,7 +149,7 @@ const ProductReducer = (state = initialState, action) => {
         cartItems: state.cartItems.filter((item) => item.id !== action.payload),
       };
     case "CLEAR_CART":
-      console.log("clear cart");
+      return { ...state, cartItems: [] };
 
     default:
       return state;

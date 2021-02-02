@@ -23,6 +23,10 @@ const increaseCartIndex = () => {
 const decreaseCartIndex = () => {
   return { type: "DEC_CART_INDEX" };
 };
+
+const adjustCartIndex = (id) => {
+  return { type: "ADJUST_CART_INDEX", payload: id };
+};
 const toggleCart = () => {
   return { type: "TOGGLE_CART" };
 };
@@ -67,19 +71,25 @@ const initializeSingleProduct = () => {
 const increaseQuantity = (id) => {
   return (dispatch) => {
     dispatch({ type: "INC_QUANTITY", payload: id });
+    dispatch(increaseCartIndex());
+    dispatch(calculatePrice());
     dispatch(syncStorage());
   };
 };
 const decreaseQuantity = (id) => {
   return (dispatch) => {
     dispatch({ type: "DEC_QUANTITY", payload: id });
+    dispatch(decreaseCartIndex());
+    dispatch(calculatePrice());
     dispatch(syncStorage());
   };
 };
 
 const removeCartItem = (id) => {
   return (dispatch) => {
+    dispatch(adjustCartIndex(id))
     dispatch({ type: "REMOVE_CART_ITEM", payload: id });
+    dispatch(calculatePrice());
     dispatch(syncStorage());
   };
 };
