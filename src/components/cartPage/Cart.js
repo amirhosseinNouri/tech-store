@@ -18,5 +18,6 @@ export default function Cart() {
 }
 
 const Wrapper = styled.section`
-padding : 3rem 2rem;
+padding : 5rem 2rem  3rem 2rem;
+
 `;

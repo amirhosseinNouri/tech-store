@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   display: none;
 
   @media (min-width: 768px) {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     grid-template-columns: repeat(6, 1fr);
     display: grid;
     place-items: center;

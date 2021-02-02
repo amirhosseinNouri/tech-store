@@ -3,7 +3,6 @@ import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-
 export default function CartList() {
   const { cartItems } = useSelector((state) => state.product);
 
@@ -20,7 +19,5 @@ export default function CartList() {
 }
 
 const Wrapper = styled.section`
-    margin-top : 2rem;
-   display : grid;
-   place-items : center;
+  margin-top: 2rem;
 `;

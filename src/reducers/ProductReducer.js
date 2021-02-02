@@ -115,15 +115,18 @@ const ProductReducer = (state = initialState, action) => {
         singleProduct: JSON.parse(localStorage.getItem("singleProduct")),
       };
 
-      // Cart Page
+    // Cart Page
     case "INC_QUANTITY":
+      console.log(`inc quantity ${action.paylaod}`);
     case "DEC_QUANTITY":
+      console.log(`dec quantity ${action.paylaod}`);
     case "REMOVE_CART_ITEM":
       return {
         ...state,
         cartItems: state.cartItems.filter((item) => item.id !== action.payload),
       };
-    case "CLEAR_CART": console.log('clear cart');
+    case "CLEAR_CART":
+      console.log("clear cart");
 
     default:
       return state;

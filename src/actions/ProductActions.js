@@ -76,7 +76,10 @@ const removeCartItem = (id) => {
 };
 
 const clearCart = () => {
-  return { type: "CLEAR_CART" };
+  return (dispatch) => {
+    dispatch({ type: "CLEAR_CART" });
+    dispatch(syncStorage());
+  };
 };
 export {
   initialSetup,
