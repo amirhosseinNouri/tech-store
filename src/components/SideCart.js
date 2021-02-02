@@ -15,23 +15,25 @@ export default function SideCart() {
         {cartItems.map((item) => {
           return (
             <li key={item.id}>
-              <img src={item.image} alt="" />
-              <h6>{item.title}</h6>
-              <h6>Amount : {item.count}</h6>
+              <img src={item.image} alt={item.title} />
+              <h6 className="title">{item.title}</h6>
+              <h6 className="amount">Amount : {item.count}</h6>
             </li>
           );
         })}
       </ul>
-      <h4>Cart Total : ${cartTotal}</h4>
-      <Link to="/cart" className="btn">
-        Cart Page
-      </Link>
+      <h4 className="total">Cart Total : ${cartTotal}</h4>
+      <div className="botton-container">
+        <Link to="/cart" className="btn">
+          Cart Page
+        </Link>
+      </div>
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  padding: 4rem 2rem;
+  padding: 2rem 1.5rem 6rem 1.5rem;
   position: fixed;
   top: 64px;
   right: 0;
@@ -48,4 +50,38 @@ const Wrapper = styled.div`
   }
 
   overflow: scroll;
+
+  ul {
+    list-style-type: none;
+  }
+
+  li {
+    margin-bottom: 1.3rem;
+
+    img {
+      display: block;
+      width: 35px;
+    }
+    h6 {
+      margin-top: 0.5rem;
+    }
+    .amount {
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+  }
+  .title {
+    font-size : 0.8rem;
+    letter-spacing : 1px;
+    text-transform : capitalize;
+  }
+  .total {
+    color: var(--primaryColor-2);
+    margin-bottom: 2rem;
+  }
+
+
+  .botton-container {
+    text-align: center;
+  }
 `;

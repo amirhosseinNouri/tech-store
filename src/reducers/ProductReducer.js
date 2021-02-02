@@ -7,7 +7,7 @@ const initialState = {
   cartSubTotal: 0,
   cartTax: 0,
   cartTotal: 0,
-  cartOpen: true,
+  cartOpen: false,
   cartIndex: 0,
   cartItems: [],
 };
