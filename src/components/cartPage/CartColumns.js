@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function CartPage() {
+export default function CartColumns() {
     return (
         <div>
-            Cart page
+            cart Column
         </div>
     )
 }
