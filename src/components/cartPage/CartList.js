@@ -3,6 +3,7 @@ import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
+
 export default function CartList() {
   const { cartItems } = useSelector((state) => state.product);
 
