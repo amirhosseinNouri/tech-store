@@ -10,15 +10,24 @@ const initialState = {
   cartOpen: false,
   cartIndex: 0,
   cartItems: [],
+  search: "",
+  price: 0,
+  min: 0,
+  max: 0,
+  company: "all",
+  shipping: false,
 };
 const ProductReducer = (state = initialState, action) => {
   switch (action.type) {
     case "INITIAL_SETUP":
+      let maxPrice = Math.max(...state.storeProducts.map((item) => item.price));
+      // let minPrice = Math.min(...state.storeProducts.map((item) => item.price));
       return {
         ...state,
         storeProducts: action.payload.storeProducts,
         filteredProducts: action.payload.storeProducts,
         featuredProducts: action.payload.featuredProducts,
+        max: maxPrice,
       };
 
     case "INC_CART_INDEX":

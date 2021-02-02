@@ -87,7 +87,7 @@ const decreaseQuantity = (id) => {
 
 const removeCartItem = (id) => {
   return (dispatch) => {
-    dispatch(adjustCartIndex(id))
+    dispatch(adjustCartIndex(id));
     dispatch({ type: "REMOVE_CART_ITEM", payload: id });
     dispatch(calculatePrice());
     dispatch(syncStorage());
@@ -99,6 +99,23 @@ const clearCart = () => {
     dispatch({ type: "CLEAR_CART" });
     dispatch(syncStorage());
   };
+};
+
+// Filter
+const handlePrice = (event) => {
+  return { type: "HANDLE_EVENT", payload: event.target.id };
+};
+const handleMax = (event) => {
+  return { type: "HANDLE_MAX", paylaod: event.target.value };
+};
+const handleShipping = () => {
+  return { type: "HANDLE_SHIPPING" };
+};
+const handleSearch = (event) => {
+  return { type: "HANDLE_SEARCH", paylaod: event.target.value };
+};
+const handleCompany = (event) => {
+  return { type: "HANDLE_COMPANY", payload: event.target.value };
 };
 export {
   initialSetup,
@@ -115,4 +132,9 @@ export {
   increaseQuantity,
   decreaseQuantity,
   clearCart,
+  handlePrice,
+  handleMax,
+  handleShipping,
+  handleSearch,
+  handleCompany,
 };
