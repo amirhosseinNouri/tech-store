@@ -65,7 +65,7 @@ const ProductReducer = (state = initialState, action) => {
       return {
         ...state,
         cartSubTotal: subTotal,
-        cartTax: tax,
+        cartTax: tax.toFixed(2),
         cartTotal: total,
       };
 
