@@ -25,7 +25,7 @@ const ProductReducer = (state = initialState, action) => {
       return {
         ...state,
         storeProducts: action.payload.storeProducts,
-        filteredProducts: [action.payload.storeProducts],
+        filteredProducts: action.payload.storeProducts,
         featuredProducts: action.payload.featuredProducts,
         max: maxPrice,
       };
