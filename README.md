@@ -2,7 +2,6 @@
 
 Simple Ecommerce app using React.
 
-I used Redux for this project.
 
 This project is a practice for [React Tutorial and Projects Course](https://anouri-tech-store.netlify.app/).
 
