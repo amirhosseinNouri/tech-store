@@ -21,7 +21,7 @@ export default function Products() {
         <h4 className="no-items">Sorry, no items matched your search.</h4>
       ) : (
         <div className="products">
-          {storeProducts.map((item) => {
+          {filteredProducts.map((item) => {
             return <Product product={item} key={item.id}></Product>;
           })}
         </div>

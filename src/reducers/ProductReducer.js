@@ -172,6 +172,35 @@ case "HANDLE_FILTER_CHANGE" :
   console.log(value);
   return {...state , [name] :value }
 
+  case "SORT_DATA" :
+    const {storeProducts , price , company , shipping , search} = state
+    let sortedProducts = [...storeProducts]
+    console.log(sortedProducts);
+    
+
+    // Filtering base on company
+    if(company !== 'all'){
+      sortedProducts = sortedProducts.filter(item => item.company === company)
+    }
+
+    // filtering base on price
+    sortedProducts = sortedProducts.filter(item => item.price <= parseInt(price))
+
+    // Filtering based on shipping 
+    if(shipping){
+      sortedProducts = sortedProducts.filter(item => item.freeShipping )
+    }
+
+    // Filtering based on search
+    if(search.length > 0){
+      sortedProducts = sortedProducts.filter(item => {
+        let tempSearch = search.toLowerCase()
+        let tempTitle = item.title.toLowerCase().slice(0 , search.length)
+        if(tempSearch === tempTitle) return item
+      })
+    }
+    return {...state , filteredProducts : sortedProducts}
+
     default:
       return state;
   }

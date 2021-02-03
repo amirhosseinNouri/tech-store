@@ -108,8 +108,15 @@ const clearCart = () => {
 const initializeFilterParams = () =>{
   return {type : "INIT_FILTER_PARAMS"}
 }
+const sortData = () =>{
+  return {type : "SORT_DATA"}
+}
 const handleFilterChange = (event) =>{
-  return {type : "HANDLE_FILTER_CHANGE" , payload : event.target}
+  return dispatch =>{
+
+    dispatch({type : "HANDLE_FILTER_CHANGE" , payload : event.target})
+    dispatch(sortData())
+  }
 }
 export {
   initialSetup,
