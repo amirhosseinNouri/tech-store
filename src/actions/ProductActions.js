@@ -1,16 +1,19 @@
 import products from "../data/productData";
 const initialSetup = () => {
-  const storeProducts = products.map((item) => {
-    const { id } = item.sys;
-    const image = item.fields.image.fields.file.url;
-    const product = { id, ...item.fields, image };
-    return product;
-  });
+  return (dispatch) => {
+    const storeProducts = products.map((item) => {
+      const { id } = item.sys;
+      const image = item.fields.image.fields.file.url;
+      const product = { id, ...item.fields, image };
+      return product;
+    });
 
-  let featuredProducts = storeProducts.filter((item) => item.featured);
-  const payload = { storeProducts, featuredProducts };
+    let featuredProducts = storeProducts.filter((item) => item.featured);
+    const payload = { storeProducts, featuredProducts };
 
-  return { type: "INITIAL_SETUP", payload };
+    dispatch({ type: "INITIAL_SETUP", payload });
+    dispatch(initializeFilterParams())
+  };
 };
 
 const setSignleProduct = (id) => {
@@ -102,6 +105,9 @@ const clearCart = () => {
 };
 
 // Filter
+const initializeFilterParams = () =>{
+  return {type : "INIT_FILTER_PARAMS"}
+}
 const handlePrice = (event) => {
   return { type: "HANDLE_EVENT", payload: event.target.id };
 };
