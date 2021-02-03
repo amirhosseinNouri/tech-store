@@ -7,6 +7,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { addCartItem } from "../actions/ProductActions";
 
 export default function SingleProductPage() {
+
+  React.useEffect(()=>{
+    window.scrollTo(0,0)
+  } , [])
   const dispatch = useDispatch();
   const { singleProduct, loading } = useSelector((state) => state.product);
   const { company, description, image, title, id, price } = singleProduct;

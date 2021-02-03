@@ -87,6 +87,7 @@ const Wrapper = styled.article`
     }
 
     .quantity-icon {
+
       font-size: 1.2rem;
       color: var(--primaryColor-2);
       cursor: pointer;
