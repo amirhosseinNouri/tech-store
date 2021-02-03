@@ -5,7 +5,7 @@ Simple Ecommerce app using React.
 
 This project is a practice for [React Tutorial and Projects Course](https://anouri-tech-store.netlify.app/).
 
-Check out the final result [here](https://anouri-tech-store.netlify.app/) (you should probably use a VPN).
+Check out the final result [**here**](https://anouri-tech-store.netlify.app/) (you should probably use a VPN).
 
 ## Redux
 [Redux main doc](https://redux.js.org/)
