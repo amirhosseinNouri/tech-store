@@ -41,6 +41,7 @@ export default function Filter() {
       <div className="filter-control">
         <label htmlFor="company">Company</label>
         <select
+          className="filter-item"
           name="company"
           id="company"
           value={company}
@@ -58,6 +59,7 @@ export default function Filter() {
           product price : <span>${price}</span>
         </label>
         <input
+          className="filter-price"
           type="range"
           name="price"
           id="price"
@@ -69,9 +71,10 @@ export default function Filter() {
       </div>
 
       {/* Free shipping */}
-      <div className="filter-cont">
+      <div className="filter-shipping">
         <label htmlFor="shipping">Free Shipping</label>
         <input
+          className="shipping"
           type="checkbox"
           name="shipping"
           id="shipping"
@@ -83,4 +86,38 @@ export default function Filter() {
   );
 }
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  row-gap: 1rem;
+  column-gap: 2rem;
+
+  .filter-control {
+    text-align: left;
+
+    label {
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    input,
+    .filter-item {
+      display: block;
+      width: 100%;
+      background-color: transparent;
+      border-radius: 5px;
+      border: 2px solid var(--darkGrey);
+    }
+  }
+
+  .shipping {
+    margin-left: 0.5rem;
+  }
+  .filter-shipping {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
