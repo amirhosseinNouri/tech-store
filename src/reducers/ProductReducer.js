@@ -158,48 +158,50 @@ const ProductReducer = (state = initialState, action) => {
     case "CLEAR_CART":
       return { ...state, cartItems: [] };
 
-
-      // Filtering
+    // Filtering
     case "INIT_FILTER_PARAMS":
       let maxPrice = Math.max(...state.storeProducts.map((item) => item.price));
       return { ...state, max: maxPrice, price: maxPrice };
 
+    case "HANDLE_FILTER_CHANGE":
+      const name = action.payload.name;
+      const value =
+        action.payload.type === "checkbox"
+          ? action.payload.checked
+          : action.payload.value;
+      return { ...state, [name]: value };
 
-case "HANDLE_FILTER_CHANGE" :
-  const name = action.payload.name
-  const value = action.payload.type === "checkbox" ? action.payload.checked : action.payload.value
-  console.log(name);
-  console.log(value);
-  return {...state , [name] :value }
+    case "SORT_DATA":
+      const { storeProducts, price, company, shipping, search } = state;
+      let sortedProducts = [...storeProducts];
 
-  case "SORT_DATA" :
-    const {storeProducts , price , company , shipping , search} = state
-    let sortedProducts = [...storeProducts]
-    console.log(sortedProducts);
-    
+      // Filtering base on company
+      if (company !== "all") {
+        sortedProducts = sortedProducts.filter(
+          (item) => item.company === company
+        );
+      }
 
-    // Filtering base on company
-    if(company !== 'all'){
-      sortedProducts = sortedProducts.filter(item => item.company === company)
-    }
+      // filtering base on price
+      sortedProducts = sortedProducts.filter(
+        (item) => item.price <= parseInt(price)
+      );
 
-    // filtering base on price
-    sortedProducts = sortedProducts.filter(item => item.price <= parseInt(price))
+      // Filtering based on shipping
+      if (shipping) {
+        sortedProducts = sortedProducts.filter((item) => item.freeShipping);
+      }
 
-    // Filtering based on shipping 
-    if(shipping){
-      sortedProducts = sortedProducts.filter(item => item.freeShipping )
-    }
-
-    // Filtering based on search
-    if(search.length > 0){
-      sortedProducts = sortedProducts.filter(item => {
-        let tempSearch = search.toLowerCase()
-        let tempTitle = item.title.toLowerCase().slice(0 , search.length)
-        if(tempSearch === tempTitle) return item
-      })
-    }
-    return {...state , filteredProducts : sortedProducts}
+      // Filtering based on search
+      if (search.length > 0) {
+        sortedProducts = sortedProducts.filter((item) => {
+          let tempSearch = search.toLowerCase();
+          let tempTitle = item.title.toLowerCase().slice(0, search.length);
+          if (tempSearch === tempTitle) return item;
+          else return null;
+        });
+      }
+      return { ...state, filteredProducts: sortedProducts };
 
     default:
       return state;

@@ -6,9 +6,7 @@ import Title from "../Title";
 import Filter from "../Filter";
 
 export default function Products() {
-  const { storeProducts, filteredProducts } = useSelector(
-    (state) => state.product
-  );
+  const { filteredProducts } = useSelector((state) => state.product);
   return (
     <Wrapper>
       <Title title="our products" center="true"></Title>
