@@ -1,5 +1,4 @@
-# Tech Store
-![](https://github.com/amirhosseinNouri/tech-store/blob/master/src/images/logo.svg)
+# ![](https://github.com/amirhosseinNouri/tech-store/blob/master/src/images/logo.svg)
 
 Simple Ecommerce app using React.
 
