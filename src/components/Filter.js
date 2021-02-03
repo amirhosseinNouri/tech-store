@@ -5,13 +5,7 @@ import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 
 // Actions
-import {
-  handlePrice,
-  handleMax,
-  handleShipping,
-  handleSearch,
-  handleCompany,
-} from "../actions/ProductActions";
+import { handleFilterChange } from "../actions/ProductActions";
 
 export default function Filter() {
   const dispatch = useDispatch();
@@ -46,7 +40,7 @@ export default function Filter() {
           name="search"
           id="search"
           value={search}
-          onChange={() => dispatch(handleSearch())}
+          onChange={(e) => dispatch(handleFilterChange(e))}
         />
       </div>
       {/* Category Search */}
@@ -57,7 +51,7 @@ export default function Filter() {
           name="company"
           id="company"
           value={company}
-          onChange={() => dispatch(handleCompany())}
+          onChange={(e) => dispatch(handleFilterChange(e))}
         >
           {companyOptions}
         </select>
@@ -76,7 +70,7 @@ export default function Filter() {
           min={min}
           max={max}
           value={price}
-          onChange={() => dispatch(handlePrice())}
+          onChange={(e) => dispatch(handleFilterChange(e))}
         />
       </div>
 
@@ -88,7 +82,7 @@ export default function Filter() {
           type="checkbox"
           name="shipping"
           id="shipping"
-          onChange={() => dispatch(handleShipping())}
+          onChange={(e) => dispatch(handleFilterChange(e))}
           checked={shipping && true}
         />
       </div>

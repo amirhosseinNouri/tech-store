@@ -108,21 +108,9 @@ const clearCart = () => {
 const initializeFilterParams = () =>{
   return {type : "INIT_FILTER_PARAMS"}
 }
-const handlePrice = (event) => {
-  return { type: "HANDLE_EVENT", payload: event.target.id };
-};
-const handleMax = (event) => {
-  return { type: "HANDLE_MAX", paylaod: event.target.value };
-};
-const handleShipping = () => {
-  return { type: "HANDLE_SHIPPING" };
-};
-const handleSearch = (event) => {
-  return { type: "HANDLE_SEARCH", paylaod: event.target.value };
-};
-const handleCompany = (event) => {
-  return { type: "HANDLE_COMPANY", payload: event.target.value };
-};
+const handleFilterChange = (event) =>{
+  return {type : "HANDLE_FILTER_CHANGE" , payload : event.target}
+}
 export {
   initialSetup,
   setSignleProduct,
@@ -138,9 +126,5 @@ export {
   increaseQuantity,
   decreaseQuantity,
   clearCart,
-  handlePrice,
-  handleMax,
-  handleShipping,
-  handleSearch,
-  handleCompany,
+  handleFilterChange 
 };

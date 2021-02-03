@@ -158,9 +158,20 @@ const ProductReducer = (state = initialState, action) => {
     case "CLEAR_CART":
       return { ...state, cartItems: [] };
 
+
+      // Filtering
     case "INIT_FILTER_PARAMS":
       let maxPrice = Math.max(...state.storeProducts.map((item) => item.price));
       return { ...state, max: maxPrice, price: maxPrice };
+
+
+case "HANDLE_FILTER_CHANGE" :
+  const name = action.payload.name
+  const value = action.payload.type === "checkbox" ? action.payload.checked : action.payload.value
+  console.log(name);
+  console.log(value);
+  return {...state , [name] :value }
+
     default:
       return state;
   }
