@@ -24,6 +24,18 @@ export default function Filter() {
     company,
     shipping,
   } = useSelector((state) => state.product);
+  let uniqueCompanies = new Set();
+  uniqueCompanies.add("all");
+  storeProducts.map((item) => uniqueCompanies.add(item.company));
+  uniqueCompanies = [...uniqueCompanies];
+  const companyOptions = uniqueCompanies.map((item, index) => {
+    return (
+      <option key={index} value={item}>
+        {item}
+      </option>
+    );
+  });
+
   return (
     <Wrapper>
       {/* Text Search */}
@@ -47,9 +59,7 @@ export default function Filter() {
           value={company}
           onChange={() => dispatch(handleCompany())}
         >
-          <option value="all">all</option>
-          <option value="fuji">fuji</option>
-          <option value="htc">htc</option>
+          {companyOptions}
         </select>
       </div>
 
@@ -79,7 +89,7 @@ export default function Filter() {
           name="shipping"
           id="shipping"
           onChange={() => dispatch(handleShipping())}
-          value={shipping && true}
+          checked={shipping && true}
         />
       </div>
     </Wrapper>
@@ -92,6 +102,8 @@ const Wrapper = styled.section`
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   row-gap: 1rem;
   column-gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 
   .filter-control {
     text-align: left;
@@ -119,5 +131,9 @@ const Wrapper = styled.section`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  select {
+    text-transform: capitalize;
   }
 `;
