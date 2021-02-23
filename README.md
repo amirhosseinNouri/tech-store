@@ -27,10 +27,11 @@ React-Router-Dom is also involved in this project to route between pages.
 - [react-router-dom - Main Docs](https://reactrouter.com/web/guides/quick-start)
 
 
-
 ## Deployment
 
 [Netlify](https://www.netlify.com/)
 
 
+
+- [ ] Optimize Images
 
