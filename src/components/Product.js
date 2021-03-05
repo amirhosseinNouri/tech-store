@@ -3,15 +3,23 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { FaSearch, FaCartPlus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import {  setSignleProduct } from "../actions/ProductActions";
-import {addCartItem} from '../actions/ProductActions'
+import { setSignleProduct } from "../actions/ProductActions";
+import { addCartItem } from "../actions/ProductActions";
 
 export default function Product({ product }) {
   const dispatch = useDispatch();
   return (
     <Wrapper>
       <div className="product__img">
-        <img src={product.image} alt="" />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={`${product.image.split(".")[0]}.webp 1x`}
+          />
+          <source type="image/png" srcSet={`${product.image} 1x`} />
+
+          <img src={product.image} alt="" />
+        </picture>
       </div>
       <div className="product__info">
         <span className="product__title">{product.title}</span>
@@ -95,7 +103,6 @@ const Wrapper = styled.article`
 
   &:hover {
     box-shadow: 7px 10px 5px 0px rgba(0, 0, 0, 0.5);
-
 
     .product__img {
       transform: scale(1.15);
